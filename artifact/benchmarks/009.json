@@ -1,0 +1,33 @@
+{
+  "input_data":
+   [
+     [
+        {"player": "E.Els", "rd": 1, "hole": 1, "distToPin": 525, "distShot": 367.6},
+        {"player": "E.Els", "rd": 1, "hole": 1, "distToPin": 157.4, "distShot": 130.8},
+        {"player": "E.Els", "rd": 1, "hole": 1, "distToPin": 27.5, "distShot": 27.4},
+        {"player": "E.Els", "rd": 1, "hole": 1, "distToPin": 1.2, "distShot": 1.2},
+        {"player": "E.Els", "rd": 1, "hole": 2, "distToPin": 222, "distShot": 216.6},
+        {"player": "E.Els", "rd": 1, "hole": 2, "distToPin": 6.8, "distShot": 6.6},
+        {"player": "E.Els", "rd": 1, "hole": 2, "distToPin": 0.3, "distShot": 0.3},
+        {"player": "E.Els", "rd": 2, "hole": 1, "distToPin": 378, "distShot": 244.4},
+        {"player": "E.Els", "rd": 2, "hole": 1, "distToPin": 135.9, "distShot": 141.6},
+        {"player": "E.Els", "rd": 2, "hole": 1, "distToPin": 6.7, "distShot": 6.0},
+        {"player": "E.Els", "rd": 2, "hole": 1, "distToPin": 0.1, "distShot": 0.1}
+    ]
+  ],
+  "url": "https://stackoverflow.com/questions/31549958/using-dplyrsummarize-function-for-multi-step-arithmetical-process?r=SearchResults",
+  "exp_out": [{"0": 0},
+    {"op": "group_sum", "0": [1,2], "1": ["max", "sum"], "2": [3, 4]},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x - y", "1": [3, 2]},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x / y", "1": [2, 4]},
+    {"op": "group_sum", "0": [0], "1": "mean", "2": 5}
+  ],
+  "parameter_config": {
+                "aggr_func": ["mean", "max", "sum"],
+                "mutate_func": ["mean", "max", "sum"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x - y",
+                                    "lambda x, y: x / y",
+                                    "lambda x, y: x + y"]
+            }
+}

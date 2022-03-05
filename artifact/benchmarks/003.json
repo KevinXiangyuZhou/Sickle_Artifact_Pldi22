@@ -1,0 +1,20 @@
+{
+  "input_data": [[
+    {"name": "Smith", "job": "Clerk", "salary": 800},
+    {"name": "Allen", "job": "Salesman", "salary": 1600},
+    {"name": "Ward", "job": "Salesman", "salary": 1250},
+    {"name": "Jones", "job": "Manager", "salary": 800},
+    {"name": "Blake", "job": "Manager", "salary": 2975},
+    {"name": "Clark", "job": "Manager", "salary": 2850},
+    {"name": "Turner", "job": "Salesman", "salary": 2450}
+  ]],
+  "url":"https://www.red-gate.com/simple-talk/sql/oracle/introduction-to-analytic-functions-part-1-2/",
+  "exp_out": [{"0": 0}, {"op": "group_mutate", "0": [], "1": "mean", "2": 2}],
+  "parameter_config": {
+                "aggr_func": ["mean"],
+                "mutate_func": ["mean"],
+                "join_predicates": [],
+                 "join_outer": [],
+                "mutate_function": []
+            }
+}

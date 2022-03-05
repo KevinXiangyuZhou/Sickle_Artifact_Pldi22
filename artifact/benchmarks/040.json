@@ -1,0 +1,19 @@
+{
+  "input_data": [[
+    {"ID": 1, "p": 10, "r": 5},
+    {"ID": 1, "p": 9, "r": 0},
+    {"ID": 2, "p": 7, "r": 6},
+    {"ID": 2, "p": 0, "r": 7}
+  ]],
+  "url": "https://stackoverflow.com/questions/54987139/pandas-multiple-group-by-and-operations-on-values",
+  "exp_out": [{"0": 0},
+    {"op": "group_sum", "0": [0], "1": ["sum", "sum"], "2": [1, 2]},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x - y", "1": [1, 2]}],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["sum", "sum"],
+                "mutate_func": ["sum", "cumsum"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x - y", "lambda x, y: x + y"]
+            }
+}

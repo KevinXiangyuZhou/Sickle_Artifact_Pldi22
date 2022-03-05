@@ -1,0 +1,26 @@
+{
+   "input_data": [[
+     { "Item" : "apple", "totSaleAmount" : 10, "category" : "Fruit"},
+     { "Item" : "orange", "totSaleAmount" : 50, "category" : "Fruit"},
+     { "Item" : "apple", "totSaleAmount" : 20, "category" : "Fruit"},
+     { "Item" : "carrot", "totSaleAmount" : 60, "category" : "Vegetable"},
+     { "Item" : "potato", "totSaleAmount" : 30, "category" : "Vegetable"},
+     { "Item" : "coffee", "totSaleAmount" : 5, "category" : "Beverage"},
+     { "Item" : "potato", "totSaleAmount" : 10, "category" : "Vegetable"},
+     { "Item" : "tea", "totSaleAmount" : 5, "category" : "Beverage"},
+     { "Item" : "tea", "totSaleAmount" : 5, "category" : "Beverage"},
+     { "Item" : "strawberry", "totSaleAmount" : 40, "category" : "Fruit"}
+   ]],
+  "url": "https://stackoverflow.com/questions/60800700/how-to-perform-arithmetic-operations-and-grouping-and-create-new-dataframe",
+  "exp_out": [{"0": 0},
+    {"op": "group_mutate", "0": [0], "1": "sum", "2": 1},
+    {"op": "group_mutate", "0": [0], "1": "count", "2": 1}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["sum", "count", "mean"],
+                "mutate_func": ["sum", "count", "cumsum"],
+                "join_predicates": [],
+                "mutate_function": []
+            }
+}

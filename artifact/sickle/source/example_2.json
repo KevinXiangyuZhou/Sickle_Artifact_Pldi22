@@ -1,0 +1,25 @@
+{
+  "input_data": [[{"trip_id": 944732, "date": "2015-09-24"},
+                  {"trip_id": 984595, "date": "2015-09-24"},
+                  {"trip_id": 984596, "date": "2015-09-24"},
+                  {"trip_id": 1129385, "date": "2015-09-24"},
+                  {"trip_id": 1030383, "date": "2015-09-30"},
+                  {"trip_id": 969490, "date": "2015-09-30"},
+                  {"trip_id": 947105, "date": "2015-09-30"},
+                  {"trip_id": 1011650, "date": "2015-11-16"}]],
+  "output_data": [{"date": "2015-09-24", "count_date": 4, "cum_count_date": 4},
+                  {"date": "2015-09-30", "count_date": 3, "cum_count_date": 7},
+                  {"date": "2015-11-16", "count_date": 1, "cum_count_date": 8}],
+
+  "demonstration": [
+    [["0_b0"], {"op": "cumsum", "children":  [{"op":  "count", "children": ["0_a0", "0_a1", "0_a2", "0_a3"]}]}],
+    [["0_b7"], {"op": "cumsum", "children":  [{"op":  "count", "children": ["0_a0", "0_a1", "0_a2", "0_a3"]}, {"op":  "count", "children": ["0_a7"]}]}]
+  ],
+  "parameter_config": {
+                "aggr_func": ["count"],
+                "mutate_func": ["sum", "cumsum", "count"],
+                "join_predicates": [],
+                "join_outer": [],
+                "mutate_function": ["lambda x, y: x + y"]
+            }
+}

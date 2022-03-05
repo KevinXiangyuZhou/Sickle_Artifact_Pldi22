@@ -1,0 +1,32 @@
+{
+   "input_data": [[
+     {"name": "MILLER", "job": "Clerk", "salary": 1300, "depno": 10},
+      {"name": "SMITH", "job": "Clerk", "salary": 800, "depno": 20},
+      {"name": "ADAMS", "job": "Clerk", "salary": 1100, "depno": 20},
+      {"name": "JAMES", "job": "Clerk", "salary": 950, "depno": 30},
+      {"name": "CLARK", "job": "MARKETEER", "salary": 2450, "depno": 10},
+      {"name": "ALLEN", "job": "Salesman", "salary": 1600, "depno": 30},
+      {"name": "TURNER", "job": "Salesman", "salary": 1500, "depno": 30},
+     {"name": "WARD", "job": "Salesman", "salary": 1250, "depno": 30},
+     {"name": "MARTIN", "job": "Salesman", "salary": 1250, "depno": 30}
+   ],
+   [
+     {"depno": 10, "depname": "ACCOUNTING"},
+     {"depno": 20, "depname": "RESEARCH"},
+     {"depno": 30, "depname": "SALES"}
+   ]],
+  "url": "https://technology.amis.nl/oracle/analytical-sql-functions-theory-and-examples-part-1-on-the-partition-clause/",
+  "exp_out": [{"0": 0},
+    {"op": "join", "0": 1, "1": "[(0, 1), (3, 0)]", "2": false},
+    {"op": "group_mutate", "0": [5], "1": "mean", "2": 2},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x - y", "1": [2, 6]}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["mean"],
+                "mutate_func": ["mean"],
+                "join_predicates": ["[(0, 1), (3, 0)]"],
+                "join_outer": [false, true],
+                "mutate_function": ["lambda x, y: x - y"]
+            }
+}

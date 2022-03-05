@@ -1,0 +1,52 @@
+{
+    "input_data": [[
+        {
+            "id": "valore1",
+            "ageFrom": 0,
+            "ageTo": 10,
+            "qt": 5
+        },
+        {
+            "id": "valore2",
+            "ageFrom": 10,
+            "ageTo": 15,
+            "qt": 12
+        },
+        {
+            "id": "valore3",
+            "ageFrom": 15,
+            "ageTo": 30,
+            "qt": 74
+        },
+        {
+            "id": "valore4",
+            "ageFrom": 30,
+            "ageTo": 40,
+            "qt": 12
+        },
+        {
+            "id": "valore5",
+            "ageFrom": 40,
+            "ageTo": 99,
+            "qt": 8
+        },
+        {
+            "id": "valore6",
+            "ageFrom": 99,
+            "ageTo": 120,
+            "qt": 15
+        }
+    ]],
+  "url": "-",
+  "exp_out": [{"0": 0},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x - y", "1": [2, 1]}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": [],
+                "mutate_func": [],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x - y"]
+            }
+
+}

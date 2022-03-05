@@ -1,0 +1,55 @@
+{
+  "input_data": [[
+    {
+      "Parts": "Foundation",
+      "Start Date": 959842800,
+      "Duration": 864000
+    },
+    {
+      "Parts": "Walls",
+      "Start Date": 960793200,
+      "Duration": 604800
+    },
+    {
+      "Parts": "Roof",
+      "Start Date": 961484400,
+      "Duration": 864000
+    },
+    {
+      "Parts": "Windows, Doors",
+      "Start Date": 962434800,
+      "Duration": 432000
+    },
+    {
+      "Parts": "Plumbing",
+      "Start Date": 962953200,
+      "Duration": 259200
+    },
+    {
+      "Parts": "Electric",
+      "Start Date": 962953200,
+      "Duration": 259200
+    },
+    {
+      "Parts": "Painting",
+      "Start Date": 963298800,
+      "Duration": 172800
+    },
+    {
+      "Parts": "Flooring",
+      "Start Date": 963471600,
+      "Duration": 172800
+    }
+  ]],
+  "url": "-",
+  "exp_out": [{"0": 0},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x + y", "1": [1, 2]}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["sum"],
+                "mutate_func": ["sum", "cumsum"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x + y"]
+            }
+}

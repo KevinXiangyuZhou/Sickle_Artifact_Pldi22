@@ -1,0 +1,75 @@
+{
+  "input_data": [[
+    {
+      "x": "Label_1",
+      "h": 102,
+      "h_bar": 76
+    },
+    {
+      "x": "Label_2",
+      "h": 124,
+      "h_bar": 90
+    },
+    {
+      "x": "Label_3",
+      "h": 126,
+      "h_bar": 76
+    },
+    {
+      "x": "Label_4",
+      "h": 139,
+      "h_bar": 65
+    },
+    {
+      "x": "Label_5",
+      "h": 177,
+      "h_bar": 65
+    },
+    {
+      "x": "Label_6",
+      "h": 188,
+      "h_bar": 84
+    },
+    {
+      "x": "Label_7",
+      "h": 155,
+      "h_bar": 58
+    },
+    {
+      "x": "Label_8",
+      "h": 138,
+      "h_bar": 50
+    },
+    {
+      "x": "Label_9",
+      "h": 128,
+      "h_bar": 92
+    },
+    {
+      "x": "Label_10",
+      "h": 102,
+      "h_bar": 91
+    },
+    {
+      "x": "Label_11",
+      "h": 115,
+      "h_bar": 65
+    },
+    {
+      "x": "Label_12",
+      "h": 144,
+      "h_bar": 79
+    }
+  ]],
+  "url": "-",
+  "exp_out": [{"0": 0},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x + y", "1": [1, 2]}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["sum"],
+                "mutate_func": ["sum", "cumsum"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x + y"]
+            }
+}

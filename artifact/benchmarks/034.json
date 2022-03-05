@@ -1,0 +1,26 @@
+{
+   "input_data": [[
+     { "year" : 2004, "a" : 1, "b" : 3, "weight" : 5 },
+     { "year" : 2005, "a" : 4, "b" : 5, "weight" : 3 },
+     { "year" : 2004, "a" : 5, "b" : 7, "weight" : 6 },
+     { "year" : 2005, "a" : 7, "b" : 1, "weight" : 9 },
+     { "year" : 2005, "a" : 1, "b" : 0, "weight" : 2 },
+     { "year" : 2004, "a" : 0, "b" : 8, "weight" : 4 }
+   ]],
+  "url": "https://stackoverflow.com/questions/65005475/pandas-groupby-and-perform-arithmetic-operations",
+  "exp_out": [{"0": 0},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x * y", "1": [1, 3]},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x * y", "1": [2, 3]},
+    {"op": "group_sum", "0": [0], "1": ["sum", "sum"], "2": [4, 5]},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x / y", "1": [1, 2]}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["sum", "sum"],
+                "mutate_func": ["sum", "cumsum"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x / y",
+                                    "lambda x, y: x * y",
+                                    "lambda x, y: x + y"]
+            }
+}

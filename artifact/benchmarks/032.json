@@ -1,0 +1,64 @@
+{
+  "input_data": [
+    [
+      {
+        "key": "chelsea",
+        "name": "Chelsea",
+        "code": "CHE"
+      },
+      {
+        "key": "arsenal",
+        "name": "Arsenal",
+        "code": "ARS"
+      },
+      {
+        "key": "tottenham",
+        "name": "Tottenham Hotspur",
+        "code": "TOT"
+      }
+    ],
+    [
+        {
+          "date": "2012-01-11",
+          "team1": "tottenham",
+          "team2": "everton",
+          "score1": 2,
+          "score2": 0
+        },
+        {
+          "date": "2011-08-15",
+          "team1": "chelsea",
+          "team2": "swansea",
+          "score1": 4,
+          "score2": 0
+        },
+        {
+          "date": "2011-08-14",
+          "team1": "westbrom",
+          "team2": "manutd",
+          "score1": 1,
+          "score2": 2
+        },
+        {
+          "date": "2011-08-14",
+          "team1": "chelsea",
+          "team2": "stoke",
+          "score1": 0,
+          "score2": 0
+        }
+]
+  ],
+  "url": "https://stackoverflow.com/questions/45992903/how-to-access-all-the-matches-inside-matches-array",
+  "exp_out": [{"0": 0},
+    {"op": "join", "0": 1, "1": "[(0, 1), (0, 1)]", "2": false},
+    {"op": "group_mutate", "0": [0], "1": "sum", "2": 6}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["sum", "count"],
+                "mutate_func": ["sum", "cumsum", "count"],
+                "join_predicates": ["[(0, 1), (0, 1)]"],
+                "join_outer": [false, true],
+                "mutate_function": ["lambda x, y: x + y"]
+            }
+}

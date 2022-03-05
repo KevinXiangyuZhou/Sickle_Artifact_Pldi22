@@ -1,0 +1,75 @@
+{
+  "input_data": [[
+    {
+      "date": "9/1/11",
+      "classes": "french",
+      "score": 34
+    },
+    {
+      "date": "9/1/11",
+      "classes": "english",
+      "score": 34
+    },
+    {
+      "date": "9/1/11",
+      "classes": "french",
+      "score": 34
+    },
+    {
+      "date": "9/1/11",
+      "classes": "spanish",
+      "score": 34
+    },
+    {
+      "date": "9/2/11",
+      "classes": "french",
+      "score": 34
+    },
+    {
+      "date": "9/2/11",
+      "classes": "english",
+      "score": 34
+    },
+    {
+      "date": "9/3/11",
+      "classes": "spanish",
+      "score": 34
+    },
+    {
+      "date": "9/3/11",
+      "classes": "spanish",
+      "score": 34
+    },
+    {
+      "date": "9/5/11",
+      "classes": "spanish",
+      "score": 34
+    },
+    {
+      "date": "9/5/11",
+      "classes": "english",
+      "score": 34
+    },
+    {
+      "date": "9/5/11",
+      "classes": "french",
+      "score": 34
+    },
+    {
+      "date": "9/5/11",
+      "classes": "english",
+      "score": 34
+    }
+  ]],
+  "url": "-",
+  "exp_out": [{"0": 0},
+    {"op": "group_sum", "0": [0, 1], "1": "count", "2": 2}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["count"],
+                "mutate_func": ["count"],
+                "join_predicates": [],
+                "mutate_function": []
+            }
+}

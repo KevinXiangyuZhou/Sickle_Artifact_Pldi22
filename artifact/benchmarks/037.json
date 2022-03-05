@@ -1,0 +1,22 @@
+{
+   "input_data": [[
+     {"Name" : "Brad Pitt", "Movie" : "Moneyball", "Rating" : 7.0, "Votes":  70, "year": 2002},
+     {"Name" : "Brad Pitt", "Movie" : "Moneyball", "Rating" : 7.0, "Votes":  124, "year": 2002},
+     {"Name" : "Brad Pitt", "Movie" : "Mr. & Mrs. Smith", "Rating" : 7.8, "Votes":  120, "year": 2005},
+     {"Name" : "Rowan Atkinson", "Movie" : "The Lion King", "Rating" : 9.0, "Votes":  150, "year": 1994},
+     {"Name" : "Leonardo DiCaprio", "Movie" : "Inception", "Rating" : 8.2, "Votes":  110, "year": 2010},
+     {"Name" : "Leonardo DiCaprio", "Movie" : "Inception", "Rating" : 8.2, "Votes":  130, "year": 2010}
+
+   ]],
+  "url": "https://stackoverflow.com/questions/52209730/pandas-dataframe-transformation-applying-few-arithmetic-operations-at-once",
+  "exp_out": [{"0": 0},
+    {"op": "group_sum", "0": [0], "1": ["sum", "mean", "count"], "2": [3, 2, 4]}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["sum", "mean", "count"],
+                "mutate_func": ["sum", "mean", "count", "cumsum"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x + y"]
+            }
+}

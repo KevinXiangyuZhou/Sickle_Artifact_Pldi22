@@ -1,0 +1,72 @@
+{
+  "input_data": [[
+     {
+    "operaiton_id" : "56cf29e90c15c45630347320",
+    "timestamp" : 1456417257087,
+    "old_state" : "OPEN",
+    "new_state" : "IN_EXAM"
+    },
+
+    {
+    "operaiton_id" : "56cf29e90c15c45630347320",
+    "timestamp" : 1456481305971,
+    "old_state" : "IN_EXAM",
+    "new_state" : "IN_ALERT"
+    },
+    {
+    "operaiton_id" : "33ab23f92999c40638553320",
+    "timestamp" : 1458147304895,
+    "old_state" : "OPEN",
+    "new_state" : "IN_EXAM"
+    },
+
+    {
+    "operaiton_id" : "33ab23f92999c40638553320",
+    "timestamp" : 1458147310251,
+    "old_state" : "IN_EXAM",
+    "new_state" : "IN_ALERT"
+    }
+  ],
+  [
+     {
+    "operaiton_id" : "56cf29e90c15c45630347320",
+    "timestamp" : 1456417257087,
+    "old_state" : "OPEN",
+    "new_state" : "IN_EXAM"
+    },
+
+    {
+    "operaiton_id" : "56cf29e90c15c45630347320",
+    "timestamp" : 1456481305971,
+    "old_state" : "IN_EXAM",
+    "new_state" : "IN_ALERT"
+    },
+    {
+    "operaiton_id" : "33ab23f92999c40638553320",
+    "timestamp" : 1458147304895,
+    "old_state" : "OPEN",
+    "new_state" : "IN_EXAM"
+    },
+
+    {
+    "operaiton_id" : "33ab23f92999c40638553320",
+    "timestamp" : 1458147310251,
+    "old_state" : "IN_EXAM",
+    "new_state" : "IN_ALERT"
+    }
+  ]],
+  "url": "https://stackoverflow.com/questions/36203838/mongo-db-aggregation-self-join-with-average",
+  "exp_out": [{"0": 0},
+    {"op": "join", "0": 1, "1": "[(0, 1), (2, 3)]", "2": false},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x - y", "1": [1, 5]},
+    {"op": "group_mutate", "0": [], "1": "mean", "2": 8}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["mean"],
+                "mutate_func": ["mean"],
+                "join_predicates": ["[(0, 1), (2, 3)]"],
+                "join_outer": [false, true],
+                "mutate_function": ["lambda x, y: x - y"]
+            }
+}

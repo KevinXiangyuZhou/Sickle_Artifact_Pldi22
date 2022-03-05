@@ -1,0 +1,32 @@
+{
+   "input_data": [[
+     {"key":  1, "user_id": 1, "enquired_at": 0, "c": 1},
+     {"key":  2, "user_id": 2, "enquired_at": 0, "c": 1},
+     {"key":  3, "user_id": 3, "enquired_at": 0, "c": 1},
+     {"key":  4, "user_id": 4, "enquired_at": 0, "c": 1},
+     {"key":  5, "user_id": 5, "enquired_at": 0, "c": 1},
+     {"key":  6, "user_id": 6, "enquired_at": 0, "c": 1},
+     {"key":  7, "user_id": 7, "enquired_at": 0, "c": 1},
+     {"key":  8, "user_id": 8, "enquired_at": 0, "c": 1},
+     {"key":  9, "user_id": 9, "enquired_at": 1, "c": 1},
+     {"key":  10, "user_id": 4, "enquired_at": 0, "c": 1},
+     {"key":  11, "user_id": 10, "enquired_at": 0, "c": 1},
+     {"key":  12, "user_id": 11, "enquired_at": 1, "c": 1},
+     {"key":  13, "user_id": 12, "enquired_at": 0, "c": 1},
+     {"key":  14, "user_id": 13, "enquired_at": 0, "c": 1},
+     {"key":  15, "user_id": 5, "enquired_at": 0, "c": 1}
+   ]],
+  "url": "https://stackoverflow.com/questions/65168062/how-to-combine-an-arithmetic-sum-with-an-analytic-function-in-sql-for-a-running",
+  "exp_out": [{"0": 0},
+    {"op": "group_mutate", "0": [], "1": "cumsum", "2": 2},
+    {"op": "group_mutate", "0": [], "1": "cumsum", "2": 3},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x / y", "1": [4, 5]}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["sum"],
+                "mutate_func": ["cumsum","sum"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x / y", "lambda x, y: x + y"]
+            }
+}

@@ -1,0 +1,19 @@
+{
+  "input_data": [[
+    {"a":1 , "b":"abc", "c":"abc2", "d":"abc3" , "e":"1234"},
+    {"a":1 , "b":"abc2", "c":"abc", "d":"abc" ,"e":"1234"},
+    {"a":1 , "b":"abc", "c":"abc2", "d":"abc3","e":"123"}
+  ]],
+  "url": "https://stackoverflow.com/questions/42485315/aggregate-json-data-in-pyspark",
+  "exp_out": [{"0": 0},
+    {"op": "group_mutate", "0": [4], "1": "count", "2": 0},
+    {"op": "group_sum", "0": [1, 2, 3], "1": "sum", "2": 0}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["sum", "count"],
+                "mutate_func": ["sum", "cumsum", "count"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x + y"]
+            }
+}

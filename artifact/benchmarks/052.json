@@ -1,0 +1,22 @@
+{
+   "input_data": [[
+     { "ITEM" : "item5", "VALUE " : 1, "COUNT" : 7},
+     { "ITEM" : "item1", "VALUE " : 2, "COUNT" : 3},
+     { "ITEM" : "item1", "VALUE " : 2, "COUNT" : 2},
+     { "ITEM" : "item1", "VALUE " : 1, "COUNT" : 5},
+     { "ITEM" : "item3", "VALUE " : 2, "COUNT" : 3}
+   ]],
+  "url": "https://stackoverflow.com/questions/34121493/rank-a-group-of-items-by-count",
+  "exp_out": [{"0": 0},
+    {"op": "group_mutate", "0": [], "1": "sum", "2": 2},
+    {"op": "group_mutate", "0": [0], "1": "sum", "2": 2},
+    {"op": "group_mutate", "0": [], "1": "rank", "2": 4}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["sum"],
+                "mutate_func": ["sum", "cumsum", "rank", "rownum"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x + y"]
+            }
+}

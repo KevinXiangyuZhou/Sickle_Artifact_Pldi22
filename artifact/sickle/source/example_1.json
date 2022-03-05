@@ -1,0 +1,33 @@
+{
+  "input_data":
+   [[
+      {"city": "A", "enrolled": 1667, "quarter":  1, "group":  "Youth", "population":  5668},
+      {"city": "A", "enrolled": 1367, "quarter":  1, "group":  "Adult", "population":  5668},
+      {"city": "A", "enrolled": 256, "quarter":  2, "group":  "Youth", "population":  5668},
+      {"city": "A", "enrolled": 347, "quarter":  2, "group":  "Adult", "population":  5668},
+      {"city": "A", "enrolled": 148, "quarter":  3, "group":  "Youth", "population":  5668},
+      {"city": "A", "enrolled": 237, "quarter":  3, "group":  "Adult", "population":  5668},
+      {"city": "A", "enrolled": 556, "quarter":  4, "group":  "Youth", "population":  5668},
+      {"city": "A", "enrolled": 432, "quarter":  4, "group":  "Adult", "population":  5668},
+      {"city": "B", "enrolled": 2378, "quarter":  1, "group":  "Youth", "population":  10541},
+      {"city": "B", "enrolled": 1200, "quarter":  1, "group":  "Adult", "population":  10541},
+      {"city": "B", "enrolled": 1373, "quarter":  2, "group":  "Youth", "population":  10541},
+      {"city": "B", "enrolled": 853, "quarter":  2, "group":  "Adult", "population":  10541},
+      {"city": "B", "enrolled": 246, "quarter":  3, "group":  "Youth", "population":  10541},
+      {"city": "B", "enrolled": 235, "quarter":  3, "group":  "Adult", "population":  10541},
+      {"city": "B", "enrolled": 768, "quarter":  4, "group":  "Youth", "population":  10541},
+      {"city": "B", "enrolled": 801, "quarter":  4, "group":  "Adult", "population":  10541}
+   ]],
+  "demonstration": [
+    [["0_a0"], {"op":  "lambda x, y: x / y * 100", "children":  [{"op":  "sum", "children": ["0_b0", "0_b1"]}, "0_e0"]}],
+    [["0_a7"], {"op":  "lambda x, y: x / y * 100", "children":  [{"op":  "sum", "children": ["0_b0", "0_b1", "_UNK_", "0_b7"]}, "0_e7"]}]
+  ],
+  
+ "parameter_config": {
+                "operators": ["group_sum", "group_mutate", "mutate_arithmetic", "join"],
+                "aggr_func": ["sum"],
+                "mutate_func": ["sum", "cumsum"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x / y * 100"]
+            }
+}

@@ -1,0 +1,29 @@
+{
+  "input_data":
+   [[
+      {"cust_country": "UK", "grade": 2, "outstanding_amt": 4000},
+      {"cust_country": "USA", "grade": 2, "outstanding_amt": 6000},
+      {"cust_country": "USA", "grade": 3, "outstanding_amt": 6000},
+      {"cust_country": "India", "grade": 2, "outstanding_amt": 8000},
+      {"cust_country": "UK", "grade": 2, "outstanding_amt": 6000},
+      {"cust_country": "UK", "grade": 1, "outstanding_amt": 11000},
+      {"cust_country": "USA", "grade": 3, "outstanding_amt": 3000}
+  ]],
+  "annotated_output_data":"",
+  "url": "https://www.w3resource.com/sql/update-statement/update-columns-using-arithmetical-expression.php",
+  "correct_output": "t0 <- table_ref(0); t1 <- mutate_2(t0, lambda x: x - (x * 0.1), (2,))",
+  "exp_out": [{"0": 0},
+    {"op": "mutate_arithmetic", "0": "lambda x: x * 0.1", "1": [2]},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x + y", "1": [2, 3]}],
+
+  "parameter_config": {
+                "aggr_func": ["sum"],
+                "mutate_func": ["sum", "cumsum"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x: x * 0.1",
+                                    "lambda x, y: x - y",
+                                    "lambda x, y: x * y",
+                                    "lambda x, y: x + y"
+                ]
+            }
+}

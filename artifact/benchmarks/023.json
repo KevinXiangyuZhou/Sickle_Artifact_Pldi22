@@ -1,0 +1,23 @@
+{
+  "input_data":
+   [[
+      {"index": "A", "state": "Alabama", "Y2002": 1296530, "Y2003": 1317711, "Y2004": 1118631 },
+      {"index": "A", "state": "Alaska", "Y2002": 1170302, "Y2003": 1960378, "Y2004": 1818085 },
+      {"index": "A", "state": "Arizona", "Y2002": 1742027, "Y2003": 1968140 , "Y2004": 1377583 },
+      {"index": "A", "state": "Arkansas", "Y2002": 1485531, "Y2003": 1994927 , "Y2004": 1119299 },
+      {"index": "C", "state": "California", "Y2002": 1685349, "Y2003": 1675807 , "Y2004": 1889570 },
+      {"index": "C", "state": "Colorado", "Y2002": 1343824, "Y2003": 1878473 , "Y2004": 1886149 }
+  ]],
+  "url": "https://www.listendata.com/2016/08/dplyr-tutorial.html",
+  "exp_out": [{"0": 0},
+    {"op": "group_mutate", "0": [0], "1": "mean", "2": 2},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x - y", "1": [2, 5]}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["mean"],
+                "mutate_func": ["mean"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x - y"]
+            }
+}

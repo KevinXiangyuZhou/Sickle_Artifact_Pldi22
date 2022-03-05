@@ -1,0 +1,21 @@
+{
+  "input_data": [[
+    {"income": 104315120 , "population": 3265293 },
+    {"income": 99787808  , "population": 3268346 },
+    {"income": 96866464  , "population": 3272325  },
+    {"income": 233208576  , "population": 7965523  },
+    {"income": 93778704  , "population": 3274997  },
+    {"income": 170051568  , "population": 6062335  }
+  ]],
+  "url":"https://stackoverflow.com/questions/64174497/adding-a-variable-to-a-dataframe-in-r-and-sorting-by-said-variable",
+  "exp_out": [{"0": 0},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x / y", "1": [0, 1]},
+    {"op": "group_mutate", "0": [], "1": "rank", "2": 2}],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["sum"],
+                "mutate_func": ["sum", "rank"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x / y"]
+            }
+}

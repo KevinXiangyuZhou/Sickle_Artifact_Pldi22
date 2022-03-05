@@ -1,0 +1,25 @@
+{
+  "input_data":
+   [[
+      {"left_company": "Yes", "department": "Sales", "salary": 118680.74, "weekly_hours": 56},
+     {"left_company": "No", "department": "Sales", "salary": 85576.44, "weekly_hours": 42},
+     {"left_company": "Yes", "department": "PD", "salary": 46235.79, "weekly_hours": 56},
+     {"left_company": "No", "department": "IA", "salary": 117226.84, "weekly_hours": 50},
+     {"left_company": "No", "department": "Sales", "salary": 36634.73, "weekly_hours": 46},
+     {"left_company": "No", "department": "Marketing", "salary": 83519.59, "weekly_hours": 48},
+     {"left_company": "No", "department": "Marketing", "salary": 88555.65, "weekly_hours": 44},
+     {"left_company": "No", "department": "Sales", "salary": 122280.88, "weekly_hours": 47}
+  ]],
+  "url": "https://www.gmudatamining.com/lesson-03-r-tutorial.html",
+  "exp_out": [{"0": 0},
+    {"op": "group_mutate", "0": [1], "1": "count", "2": 2},
+    {"op": "group_mutate", "0": [1], "1": "mean", "2": 3}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["count", "mean"],
+                "mutate_func": ["count", "mean"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x / y"]
+            }
+}

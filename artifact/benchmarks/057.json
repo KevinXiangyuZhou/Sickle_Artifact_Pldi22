@@ -1,0 +1,30 @@
+{
+   "input_data": [[
+     {"empoyee_id":  100, "name": "Steven", "department_id": 90, "salary": 24000},
+     {"empoyee_id":  101, "name": "Neena", "department_id": 90, "salary": 17000},
+     {"empoyee_id":  102, "name": "Lex", "department_id": 90, "salary": 17000},
+     {"empoyee_id":  103, "name": "Alexander", "department_id": 60, "salary": 9000},
+     {"empoyee_id":  104, "name": "Bruce", "department_id": 60, "salary": 6000},
+     {"empoyee_id":  105, "name": "David", "department_id": 60, "salary": 4800},
+     {"empoyee_id":  106, "name": "Valli", "department_id": 60, "salary": 4800},
+     {"empoyee_id":  107, "name": "Diana", "department_id": 60, "salary": 4200},
+     {"empoyee_id":  108, "name": "Nancy", "department_id": 100, "salary": 12008},
+     {"empoyee_id":  109, "name": "Daniel", "department_id": 100, "salary": 9000},
+     {"empoyee_id":  110, "name": "John", "department_id": 100, "salary": 8200},
+     {"empoyee_id":  111, "name": "Iamael", "department_id": 100, "salary": 7700},
+     {"empoyee_id":  112, "name": "Joae Manuel", "department_id": 100, "salary": 7800},
+     {"empoyee_id":  113, "name": "Luis", "department_id": 100, "salary": 6900}
+   ]],
+  "url": "https://thinketl.com/sql-analytic-functions-interview-questions/",
+  "exp_out": [{"0": 0},
+    {"op": "group_mutate", "0": [2], "1": "max", "2": 3},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x - y", "1": [3, 4]}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["max"],
+                "mutate_func": ["max"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x - y"]
+            }
+}

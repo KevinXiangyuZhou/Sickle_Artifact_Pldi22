@@ -1,0 +1,47 @@
+{
+  "input_data": [[
+    {
+      "Value": "A",
+      "alpha": 2,
+      "beta": 2,
+      "gamma": 3,
+      "Totals": 7
+    },
+    {
+      "Value": "B",
+      "alpha": 2,
+      "beta": 3,
+      "gamma": 3,
+      "Totals": 8
+    },
+    {
+      "Value": "C",
+      "alpha": 3,
+      "beta": 3,
+      "gamma": 3,
+      "Totals": 9
+    },
+    {
+      "Value": "D",
+      "alpha": 3,
+      "beta": 4,
+      "gamma": 2,
+      "Totals": 9
+    },
+    {
+      "Value": "E",
+      "alpha": 4,
+      "beta": 3,
+      "gamma": 2,
+      "Totals": 9
+    }
+  ]],
+  "exp_out": [{"0": 0},
+      {"op": "group_mutate", "0": [1], "1": "cumsum", "2": 4}],
+  "parameter_config": {
+                "aggr_func": ["sum"],
+                "mutate_func": ["sum", "cumsum"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x + y"]
+            }
+}

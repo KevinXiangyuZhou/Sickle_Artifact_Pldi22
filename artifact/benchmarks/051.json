@@ -1,0 +1,23 @@
+{
+   "input_data": [[
+     { "CUS" : "A", "AMT " : 500, "TXN_CDE" : 1},
+     { "CUS" : "B", "AMT " : 400, "TXN_CDE" : 1},
+     { "CUS" : "A", "AMT " : 350, "TXN_CDE" : 1},
+     { "CUS" : "C", "AMT " : 235, "TXN_CDE" : -1},
+     { "CUS" : "C", "AMT " : 800, "TXN_CDE" : 1},
+     { "CUS" : "B", "AMT " : 132, "TXN_CDE" : -1},
+     { "CUS" : "D", "AMT " : 173, "TXN_CDE" : 1}
+   ]],
+  "url": "https://stackoverflow.com/questions/59827499/how-to-calculate-balance-from-credit-and-debit",
+  "exp_out": [{"0": 0},
+    {"op": "mutate_arithmetic", "0": "lambda x, y: x * y", "1": [1, 2]},
+    {"op": "group_mutate", "0": [0], "1": "cumsum", "2": 3}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["sum"],
+                "mutate_func": ["sum", "cumsum"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x * y", "lambda x, y: x + y"]
+            }
+}

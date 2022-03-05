@@ -1,0 +1,24 @@
+{
+   "input_data": [[
+ { "category" : "Search Engines", "hits" : 5, "bytes" : 50189 },
+ { "category" : "Content Server", "hits" : 1, "bytes" : 17308 },
+ { "category" : "Content Server", "hits" : 1, "bytes" : 47412 },
+ { "category" : "Search Engines", "hits" : 1, "bytes" : 7601 },
+ { "category" : "Business", "hits" : 1, "bytes" : 2847 },
+ { "category" : "Content Server", "hits" : 1, "bytes" : 24210 },
+ { "category" : "Internet Services", "hits" : 1, "bytes" : 3690 },
+ { "category" : "Search Engines", "hits" : 6, "bytes" : 613036 },
+ { "category" : "Search Engines", "hits" : 1, "bytes" : 2858 }
+]],
+  "url": "https://stackoverflow.com/questions/11199653/javascript-sum-and-group-by-of-json-data",
+  "exp_out": [{"0": 0},
+    {"op": "group_sum", "0": [0], "1": ["sum", "sum"], "2": [1, 2]}
+  ],
+  "parameter_config": {
+                "operators": ["group_sum", "mutate_arithmetic", "group_mutate", "join"],
+                "aggr_func": ["sum", "sum"],
+                "mutate_func": ["sum", "cumsum", "mean"],
+                "join_predicates": [],
+                "mutate_function": ["lambda x, y: x + y"]
+            }
+}

@@ -1,0 +1,25 @@
+{
+  "input_data": [[{"trip_id": 944732, "date": "2015-09-24"},
+                  {"trip_id": 984595, "date": "2015-09-24"},
+                  {"trip_id": 984596, "date": "2015-09-24"},
+                  {"trip_id": 1129385, "date": "2015-09-24"},
+                  {"trip_id": 1030383, "date": "2015-09-30"},
+                  {"trip_id": 969490, "date": "2015-09-30"},
+                  {"trip_id": 947105, "date": "2015-09-30"},
+                  {"trip_id": 1011650, "date": "2015-11-16"}]],
+  "output_data": [{"date": "2015-09-24", "count_date": 4, "cum_count_date": 4},
+                  {"date": "2015-09-30", "count_date": 3, "cum_count_date": 7},
+                  {"date": "2015-11-16", "count_date": 1, "cum_count_date": 8}],
+  "url": "https://stackoverflow.com/questions/61640526/sql-query-to-calculate-the-cumulative-number-of-trips-for-each-date",
+  "correct_output": "t0 <- table_ref(0); t1 <- group_sum(t0, (1,), count, 0); t2 <- cumsum(t1, 1)",
+  "exp_out": [{"0": 0},
+    {"op": "group_sum", "0": [1], "1": "count", "2": 0},
+    {"op": "group_mutate", "0": [], "1": "cumsum", "2": 1}],
+  "parameter_config": {
+                "aggr_func": ["count"],
+                "mutate_func": ["sum", "cumsum", "count"],
+                "join_predicates": [],
+                 "join_outer": [],
+                "mutate_function": ["lambda x, y: x + y"]
+            }
+}
